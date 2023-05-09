@@ -2,6 +2,7 @@ package com.course.evremea;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView tvHello;
     private Button buttonGo;
+    private Button buttonNew;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         tvHello = findViewById(R.id.tv_hello);
         buttonGo = findViewById(R.id.button_go);
+        buttonNew = findViewById(R.id.button_new);
 
         buttonGo.setOnClickListener(view -> {
             tvHello.setText("Hello");
@@ -47,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }).start();
+        });
+
+        buttonNew.setOnClickListener(view -> {
+            Intent intent = new Intent(this, ExampleActivity.class);
+            startActivity(intent);
         });
     }
 }
