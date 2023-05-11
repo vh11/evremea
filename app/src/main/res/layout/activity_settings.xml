@@ -4,30 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-    <Button
-        android:id="@+id/button_location"
+    tools:context=".SettingsActivity">
+    <TextView
+        android:id="@+id/tv_api_host"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Location"/>
-    <Button
-        android:id="@+id/button_coordinates"
-        app:layout_constraintTop_toBottomOf="@id/button_location"
+        android:text="Location"
+        android:textSize="24dp"
+        />
+    <EditText
+        android:id="@+id/et_api_host"
+        app:layout_constraintTop_toBottomOf="@id/tv_api_host"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Coordinates"/>
+        android:textSize="24dp"
+        />
     <Button
-        android:id="@+id/button_settings"
-        app:layout_constraintTop_toBottomOf="@id/button_coordinates"
+        android:id="@+id/button_save"
+        app:layout_constraintTop_toBottomOf="@id/et_api_host"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Settings"/>
-
+        android:text="Save"
+        android:textSize="24dp"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

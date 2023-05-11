@@ -17,43 +17,23 @@ import java.net.URLConnection;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView tvHello;
-    private Button buttonGo;
-    private Button buttonNew;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tvHello = findViewById(R.id.tv_hello);
-        buttonGo = findViewById(R.id.button_go);
-        buttonNew = findViewById(R.id.button_new);
-
-        buttonGo.setOnClickListener(view -> {
-            tvHello.setText("Hello");
-
-            new Thread(() -> {
-                try {
-                    URLConnection conn = new URL("http://172.19.171.153:4567/api/v1/weather/cities/city/Baia%20Mare").openConnection();
-
-                    byte[] buffer = new byte[256];
-                    int count = conn.getInputStream().read(buffer);
-                    String response = new String(buffer, 0, count);
-                    JSONObject jsonObject = new JSONObject(response);
-                    int temperature = jsonObject.getInt("temperature");
-
-                    runOnUiThread(() -> {
-                        tvHello.setText("" + temperature);
-                    });
-                } catch(IOException | JSONException e) {
-                    e.printStackTrace();
-                }
-            }).start();
+        findViewById(R.id.button_location).setOnClickListener(view -> {
+            Intent intent = new Intent(this, LocationActivity.class);
+            startActivity(intent);
         });
 
-        buttonNew.setOnClickListener(view -> {
-            Intent intent = new Intent(this, ExampleActivity.class);
+        findViewById(R.id.button_coordinates).setOnClickListener(view -> {
+            Intent intent = new Intent(this, CoordinatesActivity.class);
+            startActivity(intent);
+        });
+
+        findViewById(R.id.button_settings).setOnClickListener(view -> {
+            Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
         });
     }
