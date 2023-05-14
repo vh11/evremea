@@ -1,9 +1,12 @@
-package com.course.evremea;
+package com.course.evremea.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.EditText;
+
+import com.course.evremea.R;
+import com.course.evremea.store.Settings;
 
 public class SettingsActivity extends AppCompatActivity {
 

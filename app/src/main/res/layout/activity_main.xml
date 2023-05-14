@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
     <Button
         android:id="@+id/button_location"
         app:layout_constraintTop_toTopOf="parent"
@@ -29,5 +29,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Settings"/>
+    <Button
+        android:id="@+id/button_graph_example"
+        app:layout_constraintTop_toBottomOf="@id/button_settings"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Graph Example"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

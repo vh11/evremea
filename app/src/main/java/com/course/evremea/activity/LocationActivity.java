@@ -1,10 +1,13 @@
-package com.course.evremea;
+package com.course.evremea.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.course.evremea.R;
+import com.course.evremea.store.Settings;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -13,25 +16,23 @@ import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class CoordinatesActivity extends AppCompatActivity {
+public class LocationActivity extends AppCompatActivity {
 
-    private EditText etLat;
-    private EditText etLon;
+    private EditText etLocation;
     private TextView tvInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_coordinates);
+        setContentView(R.layout.activity_location);
 
-        etLat = findViewById(R.id.et_lat);
-        etLon = findViewById(R.id.et_lon);
+        etLocation = findViewById(R.id.et_location);
         tvInfo = findViewById(R.id.tv_info);
 
         findViewById(R.id.button_request).setOnClickListener((v) -> {
             new Thread(() -> {
                 try {
-                    URL url = new URL(Settings.getInstance().getCoordinatesEndpoint(etLat.getText().toString(), etLon.getText().toString()));
+                    URL url = new URL(Settings.getInstance().getLocationEndpoint(etLocation.getText().toString()));
                     URLConnection conn = url.openConnection();
 
                     byte[] buffer = new byte[256];

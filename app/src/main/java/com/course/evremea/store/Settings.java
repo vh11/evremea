@@ -1,4 +1,4 @@
-package com.course.evremea;
+package com.course.evremea.store;
 
 public class Settings {
 

@@ -1,19 +1,11 @@
-package com.course.evremea;
+package com.course.evremea.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.net.URL;
-import java.net.URLConnection;
+import com.course.evremea.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.button_settings).setOnClickListener(view -> {
             Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
+        });
+
+        findViewById(R.id.button_graph_example).setOnClickListener(view -> {
+            Intent intent = new Intent(this, GraphExampleActivity.class);
             startActivity(intent);
         });
     }
