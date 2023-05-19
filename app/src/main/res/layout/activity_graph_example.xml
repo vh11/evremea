@@ -5,9 +5,59 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.GraphExampleActivity">
+    <Spinner
+        android:id="@+id/spinner_location_type"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/et_city"
+        app:layout_constraintTop_toBottomOf="@id/spinner_location_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="City"
+        android:text="mogosa"/>
+    <EditText
+        android:id="@+id/et_lat"
+        app:layout_constraintTop_toBottomOf="@id/et_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Latitude"/>
+    <EditText
+        android:id="@+id/et_lon"
+        app:layout_constraintTop_toBottomOf="@id/et_lat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Longitude"/>
+    <Spinner
+        android:id="@+id/spinner_interval"
+        app:layout_constraintTop_toBottomOf="@id/et_lon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/button_show"
+        app:layout_constraintTop_toBottomOf="@id/spinner_interval"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show"/>
+    <Button
+        android:id="@+id/button_previous"
+        app:layout_constraintTop_toBottomOf="@id/button_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Previous"/>
+    <Button
+        android:id="@+id/button_next"
+        app:layout_constraintTop_toBottomOf="@id/button_previous"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next"/>
     <com.course.evremea.ui.GraphCanvas
         android:id="@+id/gc_example"
+        app:layout_constraintTop_toBottomOf="@id/button_next"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="0dp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
